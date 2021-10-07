@@ -32,7 +32,7 @@ def main():
             print("\n")
 
             while True:
-                print(f"Welcome {username} to the section of adding accounts and their passwords:")
+                print("Welcome {username} to the section of adding accounts and their passwords:")
                 print("-"*20)
                 code =input("To proceed, choose the following to interact with the application:  nc -to create credentials: dc -to display credentials:").lower()
                 if code == "nc":
