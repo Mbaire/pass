@@ -9,6 +9,6 @@ def __init__(self, username, password):
     
 def saveuser(self):
     User.user_List. append(self)
-
+@classmethod
 def displayUsers(cls):
         return cls.users
