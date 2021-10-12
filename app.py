@@ -23,12 +23,12 @@ def main():
     print("Welcome to the Pass volt,")
     print("\n")
     while True: 
-        shortcodes= input("Do the following,type; nu -to create user account , du -to display user , ex -to exit:").lower()
+        shortcodes= input("Kindly select: nu -to create user account , du -to display user , ex -to exit:").lower()
         if shortcodes == "nu":
             username = input("Enter your username:")
             password = input("Enter your password:")
             saveUser(createUser(username, password))
-            print(f"Hello {username} your pass volt account has successfully been created")
+            print (f"Hello {username} your pass volt account has successfully been created")
             print("\n")
 
             while True:
