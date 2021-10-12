@@ -32,14 +32,14 @@ def main():
             print("\n")
 
             while True:
-                print("Welcome {username} to the section of adding accounts and their passwords:")
+                print("Welcome {username} to the Pass volt:")
                 print("-"*20)
-                code =input("To proceed, choose the following to interact with the application:  nc -to create credentials: dc -to display credentials:").lower()
+                code =input("Kindly select:  nc -to create credentials: dc -to display credentials:").lower()
                 if code == "nc":
-                    feedback = input("Enter y to create your own password and n for the system to generate:").lower()
-                    if feedback == ("y"):
+                    feedback = input("Enter p to create your own password and n to generate one:").lower()
+                    if feedback == ("p"):
                         account = input("Enter the name of account, eg facebook, instagram, twitter:")
-                        user_name = input("Enter your desired username:")
+                        user_name = input("Enter your username:")
                         pass_word = input("Enter the password:")
                         saveCredentials(createCredentials(account,username, password))
                         print("Credentials successfully uploaded")
@@ -48,9 +48,9 @@ def main():
                         user_name = input("Enter your desired username:")
                         pass_word = randint(123456789,987456321)
                         saveCredentials(createCredentials(account, username, password))
-                        print(f"Hello {user_name} Your password is {pass_word}......SAVED!!!")    
+                        print(f"Hello {user_name} Your password is {pass_word} has been saved!")    
                     else:
-                        print("We didnt what you really want!!!")
+                        print("Not saved")
                 elif code == "dc":
                     if displayCredentials():
 
@@ -58,7 +58,7 @@ def main():
                             print(f"Account: {credential.account} Username:{credential.user_name} Password:{credential.pass_word}")
                     else:
                         print("No accounts to display")
-                else:   print("Sorry,could not process what you want")
+                else:   print("Sorry,not possible")
                 # if code == "ex":
                         # print("Exit successful")
          # below for the parent
@@ -68,5 +68,5 @@ def main():
         elif shortcodes == "ex":
             print("Exit successful")
             break
-        else: print("Kindly check your entry again")   
+        else: print("Kindly check your details again")   
 main()
