@@ -1,18 +1,18 @@
-from Credentialsclass import Credentials
+from credential import Credentials
 import unittest
 class TestCredentials(unittest.TestCase):
     def setUp(self):
-        self.myCred = Credentials("facebook", "MbaireNat", "nicole")
+        self.myCred = Credentials("facebook", "Mbairenat", "megan")
 
-        def test_Init_(self):
-            self.assertEqual(self.myCred.account, "facebook")
-        self.assertEqual(self.myCred.username, "MbaireNat")
-        self.assertEqual(self.myCred.password, "nicole")
+    def test_Init_(self):
+        self.assertEqual(self.myCred.account, "facebook")
+        self.assertEqual(self.myCred.user_name, "Mbairenat")
+        self.assertEqual(self.myCred.pass_word, "nicole")
     def tearDown(self):
         Credentials.creden_list = []
     def test_save_credentials(self):
         self.myCred.saveCred()
-        test_cred = Credentials("facebook", "MbaireNat", "nicole")
+        test_cred = Credentials("facebook", "Mbairenat", "nicole")
         test_cred.saveCred()
         self.assertEqual(len(Credentials.creden_list),2)
 
