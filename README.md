@@ -9,7 +9,7 @@ Mary Natalie
 * This is a python application that is run on terminal and enables users to generate and store passwords for their various accounts such as facebook, twitter, instagram etc.
 * For it to work, it has short codes which facilitates easier navigation for example:
 
-    1. nu - creates user account
+    1. cu - creates user account
     2. dc - diplay credentials
     3. ex - exit the app
 
