@@ -1,5 +1,5 @@
-from Userclass import User
-from Credentialsclass import Credentials
+from user import User
+from credential import Credentials
 from random import randint
 '''for the user class'''
 def createUser(username, password):
@@ -10,8 +10,8 @@ def saveUser(user):
 def displayUsers():
     User.displayUsers()
     '''this is for the credentials class'''
-def createCredentials(account, username, password):
-    myCred = Credentials(account, username, password)
+def createCredentials(account, user_name, pass_word):
+    myCred = Credentials(account, user_name, pass_word)
     return myCred
 
 def saveCredentials(credentials):
@@ -20,37 +20,37 @@ def displayCredentials():
     return Credentials.displayCredentials()
     
 def main():
-    print("Welcome to the Pass volt,")
+    print("Welcome to the pass volt,")
     print("\n")
     while True: 
-        shortcodes= input("Kindly select: nu -to create user account , du -to display user , ex -to exit:").lower()
-        if shortcodes == "nu":
+        shortcodes= input("Do the following,type; cu -to create user account , du -to display user , ex -to exit:").lower()
+        if shortcodes == "cu":
             username = input("Enter your username:")
             password = input("Enter your password:")
             saveUser(createUser(username, password))
-            print (f"Hello {username} your pass volt account has successfully been created")
+            print(f"Hello {username} your password locker account has been created successfully")
             print("\n")
 
             while True:
-                print("Welcome {username} to the Pass volt:")
+                print(f"Welcome {username} to the Pass volt,here you can add your account and its respective password:")
                 print("-"*20)
-                code =input("Kindly select:  nc -to create credentials: dc -to display credentials:").lower()
-                if code == "nc":
-                    feedback = input("Enter p to create your own password and n to generate one:").lower()
-                    if feedback == ("p"):
+                code =input("Kindly select:  cc -to create credentials: dc -to display credentials:").lower()
+                if code == "cc":
+                    feedback = input("Enter y to create your own password and n for the system to generate:").lower()
+                    if feedback == ("y"):
                         account = input("Enter the name of account, eg facebook, instagram, twitter:")
-                        user_name = input("Enter your username:")
+                        user_name = input("Enter your desired username:")
                         pass_word = input("Enter the password:")
-                        saveCredentials(createCredentials(account,username, password))
-                        print("Credentials successfully uploaded")
+                        saveCredentials(createCredentials(account,user_name, pass_word))
+                        print("Credentials uploaded successfully")
                     elif feedback == "n":
                         account = input("Enter the name of account, eg facebook, instagram, twitter:")
                         user_name = input("Enter your desired username:")
                         pass_word = randint(123456789,987456321)
-                        saveCredentials(createCredentials(account, username, password))
-                        print(f"Hello {user_name} Your password is {pass_word} has been saved!")    
+                        saveCredentials(createCredentials(account, user_name, pass_word))
+                        print(f"Hello {user_name} Your password is {pass_word} has been saved successfully")    
                     else:
-                        print("Not saved")
+                        print("Not possible")
                 elif code == "dc":
                     if displayCredentials():
 
@@ -68,5 +68,5 @@ def main():
         elif shortcodes == "ex":
             print("Exit successful")
             break
-        else: print("Kindly check your details again")   
+        else: print("Kindly check your entry again")   
 main()
